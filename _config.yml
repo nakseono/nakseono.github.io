@@ -12,10 +12,10 @@ exclude:
 
 # Site settings
 title: 끄적끄적 낙서 공간
-subtitle: ""
+subtitle: "학습한 내용과 일상 등 구분없이 제 생각을 기록합니다."
 email: nakseono@gmail.com
 name: 김선호
-description: "학습 내용을 기록합니다."
+description: ""
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
@@ -28,6 +28,13 @@ logo: "/assets/logo.png"
 markdown: kramdown
 inter_post_navigation: false
 highlightjs_theme: "monokai-sublime"
+
+# Sass settings - suppress deprecation warnings
+sass:
+  quiet_deps: true
+  verbose: false
+  silence_deprecations:
+    - import
 
 # Pagination Settings
 # https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
@@ -80,7 +87,7 @@ social:
   - name: GitHub
     icon: github
     username: nakseono
-    url: https://github.com/naksoeno
+    url: https://github.com/nakseono
     desc: Fork me on GitHub
     share: false
 
