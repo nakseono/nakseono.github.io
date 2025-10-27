@@ -1,6 +1,6 @@
 services:
   jekyll:
-    image: ruby:3.2
+    image: ruby:3.3
     container_name: blog
     working_dir: /srv/jekyll
     command: bash -c "gem install bundler && bundle install && bundle exec jekyll serve --host 0.0.0.0 --force_polling --livereload"
@@ -12,6 +12,9 @@ services:
       - jekyll_bundle:/usr/local/bundle
     environment:
       - JEKYLL_ENV=development
+      - BUNDLE_PATH=/usr/local/bundle
+    restart: unless-stopped
 
 volumes:
   jekyll_bundle:
+    driver: local

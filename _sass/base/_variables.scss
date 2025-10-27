@@ -1,19 +1,20 @@
-// Google Fonts
-@import url(//fonts.googleapis.com/css?family=Roboto+Slab:400,700,300|Roboto:400,700,300|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300);
+// Google Fonts - Medium/Notion style
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap');
 
-// Typography
-$base-font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; // $helvetica;
-$heading-font-family: "Roboto Slab", "Helvetica Neue", "Helvetica", "Arial", sans-serif; // $base-font-family;
+// Typography - Medium/Notion inspired
+$base-font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+$heading-font-family: "Noto Serif KR", "Noto Sans KR", Georgia, "Times New Roman", serif;
 
-// Font Sizes
-$base-font-size: $em-base; // 16px
+// Font Sizes - Medium style
+$em-base: 14px !default; // Reduced from 16px
+$base-font-size: $em-base;
 
 // Adjust modular scale ratio
 $modular-scale-ratio: $minor-third;
 
-// Line height
-$base-line-height: 1.8;
-$heading-line-height: 1.8;
+// Line height - Medium uses generous line height for readability
+$base-line-height: 1.75;
+$heading-line-height: 1.3;
 
 // Other Sizes
 $base-border-radius: 3px;
@@ -21,27 +22,33 @@ $base-spacing: $base-line-height * $em-base;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
-// Colors
-$dark-gray: #333;
-$medium-gray: #999;
-$light-gray: #ddd;
-$white: #fff;
-// Flat UI Colors. For more, see http://flatuicolors.com/
-$turquoise: #1abc9c;	// Turqoise
-$green: #27ae60;	  	// Nephritis
-$blue: #2980b9;				// Belize Hole
-$purple: #8e44ad;			// Wisteria
-$orange: #d35400;			// Pumpkin
-$red:	#c0392b;				// Pomegranate
-$gray: #7f8c8d;				// Asbestos
-// Even more colors
+// Colors - Medium style palette
+$dark-gray: #242424;      // Almost black for main text (Medium style)
+$medium-gray: #6B6B6B;    // For secondary text
+$light-gray: #E6E6E6;     // For borders and dividers
+$white: #FFFFFF;
+$off-white: #FAFAFA;      // Slight off-white for subtle backgrounds
+
+// Custom accent colors
+$accent-green: #006E51;   // Custom accent color
+$link-color: $dark-gray;  // Links are dark with underline
+$link-hover: $accent-green;
+
+// Legacy color support (kept for compatibility)
+$turquoise: #1abc9c;
+$green: #27ae60;
+$blue: #2980b9;
+$purple: #8e44ad;
+$orange: #d35400;
+$red: #c0392b;
+$gray: #7f8c8d;
 $bc-red: #bc0000;
 
-// Font Colors
-$base-background-color: #fff;
+// Font Colors - Medium style
+$base-background-color: $white;
 $base-font-color: $dark-gray;
-$action-color: $blue;
-$highlight-color: tint($action-color, 33%);
+$action-color: $accent-green;
+$highlight-color: $off-white;
 
 // Border
 $base-border-color: $light-gray;

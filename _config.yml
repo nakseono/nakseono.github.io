@@ -15,19 +15,42 @@ title: 끄적끄적 낙서 공간
 subtitle: "학습한 내용과 일상 등 구분없이 제 생각을 기록합니다."
 email: nakseono@gmail.com
 name: 김선호
-description: ""
+description: "개발자 김선호의 개인 블로그. 학습한 내용과 일상, 기술 관련 생각들을 기록하는 공간입니다."
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://nakseono.github.io" # the base hostname & protocol for your site
-cover: "/assets/header_image.jpg"
+cover: "/assets/header_image.jpeg"
 logo: "/assets/logo.png"
+timezone: Asia/Seoul
+lang: ko
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    default_lang: html
+    guess_lang: true
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+permalink: /:year/:month/:day/:title/
 inter_post_navigation: false
 highlightjs_theme: "monokai-sublime"
+
+# Performance optimization
+incremental: true
+liquid:
+  error_mode: strict
+  strict_filters: true
+  strict_variables: false
 
 # Sass settings - suppress deprecation warnings
 sass:

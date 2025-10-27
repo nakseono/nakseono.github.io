@@ -28,22 +28,38 @@ ul.default {
 }
 
 code {
-	background-color: #eee;
+	background-color: $off-white;
 	display: inline-block;
 	border-radius: 3px;
-	padding: 0 3px;
+	padding: 2px 6px;
+	font-size: 0.92em;
+	border: 1px solid $light-gray;
+	font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
 }
 
 blockquote {
-	color: $medium-gray;
+	color: $dark-gray;
 	font-style: italic;
-	border-left: 2px solid $light-gray;
+	border-left: 3px solid $dark-gray;
 	margin-left: 0;
-	padding-left: 3em;
+	padding-left: 1.5em;
+	font-size: 1.05em;
+	line-height: 1.8;
 }
 
 pre code.hljs {
 	font-size: modular-scale(-1);
+	border: none;
+	background-color: #F7F7F7;
+	padding: 1.5em;
+	border-radius: 4px;
+	line-height: 1.6;
+	font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+}
+
+pre {
+	margin: 1.5em 0;
+	overflow-x: auto;
 }
 
 .page-divider {
@@ -86,10 +102,11 @@ pre code.hljs {
 	width: 100%;
 	text-align: center;
 	&.has-cover {
-		color: $white;
-		text-shadow: 0 2px 1px rgba(0,0,0,0.67) !important;
+		color: $dark-gray;
+		text-shadow: none;
 		background-position: 50% 50%;
 		background-size: cover;
+		background-color: $off-white;
 		.title {
 			font-size: modular-scale(6);
 		}
@@ -110,10 +127,10 @@ pre code.hljs {
 }
 
 /*
-*	Header
+*	Header - Medium style
 */
 .navigation {
-	box-shadow: 0 2px $highlight-color;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 	padding: 0 1em;
 	margin: 0;
 	// Remove this to make header scrollable again
@@ -123,6 +140,7 @@ pre code.hljs {
 	right: 0;
 	background: $white;
 	z-index: 1;
+	border-bottom: 1px solid $light-gray;
 	/*
 	*	Navigation Menu - http://refills.bourbon.io/unstyled/ (see "Navigation")
 	*/
@@ -156,6 +174,14 @@ pre code.hljs {
     }
     span {
     	font-size: 1.25em;
+    	font-weight: 600;
+    }
+    a {
+      text-decoration: none;
+      color: $dark-gray;
+      &:hover {
+        color: $action-color;
+      }
     }
   }
   nav {
@@ -198,6 +224,15 @@ pre code.hljs {
   li.nav-link {
   	a {
 	    display: inline-block;
+	    text-decoration: none;
+	    color: $dark-gray;
+	    font-weight: 500;
+	    transition: color 0.2s ease;
+
+	    &:hover {
+	      color: $action-color;
+	    }
+
 	    @include media ($tablet) {
 	      padding-right: 1.5em;
 	    }
@@ -219,28 +254,120 @@ pre code.hljs {
 	.wrapper {
 		@include outer-container;
 		padding: 1em;
+		max-width: 740px;
+		margin: 0 auto;
 	}
 	/*
 	*	index.html
 	*/
+	.home-header {
+		padding: 3em 0 2em 0;
+		text-align: center;
+		border-bottom: 1px solid $light-gray;
+		margin-bottom: 2em;
+
+		.home-title {
+			font-size: 2em;
+			font-weight: 700;
+			margin: 0 0 0.5em 0;
+			color: $dark-gray;
+			letter-spacing: -0.02em;
+		}
+
+		.home-subtitle {
+			font-size: 1.1em;
+			color: $medium-gray;
+			margin: 0;
+			line-height: 1.6;
+		}
+	}
+
 	.post-list {
 		padding-top: 1em !important;
 		@extend %default-ul;
+
+		li {
+			margin-bottom: 3em;
+			padding-bottom: 2em;
+			border-bottom: 1px solid $light-gray;
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+
+		h2 {
+			margin-bottom: 0.75em;
+			font-size: 1.6em;
+			line-height: 1.4;
+			font-weight: 700;
+
+			a {
+				text-decoration: none;
+				color: $dark-gray;
+				transition: color 0.2s ease;
+
+				&:hover {
+					color: $action-color;
+				}
+			}
+		}
+
+		.post-excerpt {
+			margin-bottom: 1em;
+			color: $medium-gray;
+			line-height: 1.7;
+
+			p {
+				margin: 0;
+			}
+		}
+
+		// Legacy support for h3 links
+		h3 a {
+			text-decoration: none;
+			color: $dark-gray;
+			font-weight: 700;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: $action-color;
+			}
+		}
+
+		hr {
+			display: none;
+		}
 	}
 	.post-meta {
 		@include outer-container;
 		// padding: 1em 0;
 		color: $medium-gray;
+		font-size: 0.9em;
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+
 		.post-date {
 			@include span-columns(6);
 			text-align: left;
-			font-size: 0.9em;
+			font-size: 1em;
 		}
 		.post-categories {
 			@include span-columns(6);
 			margin-right: 0;
 			text-align: right;
-			font-size: 0.9em;
+			font-size: 1em;
+
+			a {
+				color: $medium-gray;
+				text-decoration: none;
+				transition: color 0.2s ease;
+
+				&:hover {
+					color: $action-color;
+				}
+			}
 		}
 	}
 	.pagination {
@@ -254,10 +381,55 @@ pre code.hljs {
       text-decoration: none;
     }
 	}
+	.loading-indicator,
+	.no-more-posts {
+		text-align: center;
+		padding: 2em 0 3em 0;
+		color: $medium-gray;
+		font-size: 0.95em;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.loading-indicator {
+		p {
+			position: relative;
+			display: inline-block;
+			padding-left: 1.5em;
+
+			&:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 1em;
+				height: 1em;
+				border: 2px solid $light-gray;
+				border-top-color: $action-color;
+				border-radius: 50%;
+				animation: spin 0.8s linear infinite;
+			}
+		}
+	}
+
+	@keyframes spin {
+		to {
+			transform: translateY(-50%) rotate(360deg);
+		}
+	}
+
+	.no-more-posts {
+		p {
+			font-style: italic;
+		}
+	}
 	.site-header-container {
-		color: $white;
-		text-shadow: 0 2px 1px rgba(0,0,0,0.33);
-		background-color: $highlight-color;
+		color: $dark-gray;
+		text-shadow: none;
+		background-color: $white;
 		.site-header{
 			.title {
 				font-size: modular-scale(6);
@@ -289,7 +461,24 @@ pre code.hljs {
 			padding-bottom: 1em;
 		}
 		.post-content {
-			padding: 1em 0;
+			padding: 2em 0;
+			font-size: 1.05em;
+
+			// Better paragraph spacing
+			> p {
+				margin-bottom: 1.5em;
+			}
+
+			// Better list spacing
+			ul, ol {
+				margin-bottom: 1.5em;
+				padding-left: 1.5em;
+
+				li {
+					margin-bottom: 0.5em;
+					line-height: 1.75;
+				}
+			}
 		}
 		.tags {
 			font-size: 0.9em;
@@ -362,26 +551,75 @@ pre code.hljs {
 		}
 		.profile {
 			max-width: 320px;
+			width: 100%;
+			height: auto;
 			margin: auto;
 			padding-bottom: 0.5em;
+			display: block;
  		}
+		.contact-links {
+			margin-top: 2.5em;
+			margin-bottom: 3em;
+			padding-top: 2em;
+			padding-bottom: 2em;
+			border-top: 1px solid $light-gray;
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			align-items: flex-start;
+
+			@include media ($tablet) {
+				flex-direction: row;
+				justify-content: center;
+				gap: 2.5em;
+				margin-bottom: 4em;
+			}
+
+			.contact-link {
+				display: flex;
+				align-items: center;
+				gap: 0.5em;
+				text-decoration: none;
+				color: $dark-gray;
+				font-size: 0.95em;
+				transition: all 0.2s ease;
+
+				&:hover {
+					color: $action-color;
+
+					svg {
+						transform: translateY(-2px);
+					}
+				}
+
+				svg {
+					flex-shrink: 0;
+					transition: transform 0.2s ease;
+				}
+
+				span {
+					line-height: 1;
+				}
+			}
+		}
 	}
 }
 
 /*
-*	Footer
+*	Footer - Medium style
 */
 .site-footer {
-	$link-color: $white;
-	padding: 1em 1em 2em 1em;
-	background-color: $highlight-color;
-	color: $white;
+	$link-color: $dark-gray;
+	padding: 2em 1em 3em 1em;
+	background-color: $off-white;
+	color: $dark-gray;
+	border-top: 1px solid $light-gray;
 	a {
 	  color: $link-color;
 	  &:active,
 	  &:focus,
 	  &:hover {
-	    color: color.adjust($link-color, $lightness: -10%);
+	    color: $link-hover;
 	  }
 	  &:active,
 	  &:focus {
