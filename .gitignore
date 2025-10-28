@@ -26,7 +26,6 @@ _site/
 # Bundler
 .bundle/
 vendor/
-Gemfile.lock
 
 # Docker
 .docker-data/
