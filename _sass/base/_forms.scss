@@ -1,5 +1,5 @@
 fieldset {
-  background-color: color.adjust($base-border-color, $lightness: 10%);
+  background-color: lighten($base-border-color, 10%);
   border: $base-border;
   margin: 0 0 $small-spacing;
   padding: $base-spacing;
@@ -42,7 +42,7 @@ textarea {
   width: 100%;
 
   &:hover {
-    border-color: color.adjust($base-border-color, $lightness: -10%);
+    border-color: darken($base-border-color, 10%);
   }
 
   &:focus {
