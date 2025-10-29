@@ -1,16 +1,6 @@
 // Primary site layout for Centrarium Theme
 
 /*
-*	Variables
-*/
-$b3: 480px;
-$mobile: $b3;
-$b2: 768px;
-$tablet: $b2;
-$b1: 960px;
-$desktop: $b1;
-
-/*
 *	Globals
 */
 html, body {
@@ -30,8 +20,8 @@ ul.default {
 code {
 	background-color: $off-white;
 	display: inline-block;
-	border-radius: 3px;
-	padding: 2px 6px;
+	border-radius: $base-border-radius;
+	padding: 2px $spacing-xs * 0.75;
 	font-size: 0.92em;
 	border: 1px solid $light-gray;
 	font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
@@ -42,7 +32,7 @@ blockquote {
 	font-style: italic;
 	border-left: 3px solid $dark-gray;
 	margin-left: 0;
-	padding-left: 1.5em;
+	padding-left: $spacing-md;
 	font-size: 1.05em;
 	line-height: 1.8;
 }
@@ -50,25 +40,43 @@ blockquote {
 pre code.hljs {
 	font-size: modular-scale(-1);
 	border: none;
-	background-color: #F7F7F7;
-	padding: 1.5em;
-	border-radius: 4px;
+	background-color: $off-white;
+	padding: $spacing-md;
+	border-radius: $base-border-radius;
 	line-height: 1.6;
 	font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
 }
 
 pre {
-	margin: 1.5em 0;
+	margin: $spacing-md 0;
 	overflow-x: auto;
 }
 
 .page-divider {
 	$divider-color: $light-gray;
   display: block;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  border-top: 1px solid $divider-color;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  box-sizing: border-box;
+
+  @include media($tablet) {
+    padding: 0 $spacing-xl;
+  }
+
+  @include media($desktop) {
+    padding: 0 $spacing-xxl;
+  }
+
+  // border를 내부 요소로 이동
+  &::before {
+    content: '';
+    display: block;
+    width: 100%;
+    border-top: 1px solid $divider-color;
+  }
+
   .one {
     position: relative;
     top: -9px;
@@ -80,6 +88,7 @@ pre {
     margin-right: auto;
     border-radius: 50%;
   }
+
   .two {
     position: relative;
     top: -26px;
@@ -115,12 +124,14 @@ pre {
 		}
 	}
 	.scrim {
-		padding: 3em 1em;
+		padding: $spacing-xl $spacing-sm;
+
 		&.has-cover {
-			background-color: rgba(0,0,0,0.2);
-			padding: 6em 1em !important;
+			background-color: rgba(0, 0, 0, 0.2);
+			padding: $spacing-xxl * 1.5 $spacing-sm !important;
+
 			@include media($tablet) {
-				padding: 9em 1em !important;
+				padding: $spacing-xxl * 2.25 $spacing-sm !important;
 			}
 		}
 	}
@@ -131,7 +142,7 @@ pre {
 */
 .navigation {
 	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
-	padding: 0 1em;
+	padding: 0;
 	margin: 0;
 	// Remove this to make header scrollable again
 	position: fixed;
@@ -150,8 +161,9 @@ pre {
     float: right;
     margin: 0;
     font-size: 1.5em;
-    padding-top: 0.5em;
-    @include media ($tablet) {
+    padding-top: $spacing-xs;
+
+    @include media($tablet) {
       display: none;
     }
   }
@@ -160,34 +172,39 @@ pre {
   	@include outer-container;
     @include clearfix;
     position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-sm;
+
+    @include media($tablet) {
+      padding: 0 $spacing-lg * 1.25;
+    }
+
+    @include media($desktop) {
+      padding: 0 $spacing-xl * 1.75;
+    }
   }
   .logo {
     float: left;
     height: 4em;
-    @include media ($tablet) {
-    	padding-left: $em-base;
-    }
-    img {
-      max-height: 2.5em;
-      margin-top: 0.75em;
-      padding-right: 1em;
-    }
+    line-height: 4em;
+    text-decoration: none;
     span {
     	font-size: 1.25em;
     	font-weight: 600;
+    	font-family: $heading-font-family;
     }
-    a {
+    color: $dark-gray;
+    &:hover {
+      color: $action-color;
       text-decoration: none;
-      color: $dark-gray;
-      &:hover {
-        color: $action-color;
-      }
     }
   }
   nav {
     float: none;
-    padding: 1.25em 0;
-    @include media ($tablet) {
+    padding: $spacing-md * 0.83 0;
+
+    @include media($tablet) {
       float: right;
       line-height: 1.5em;
     }
@@ -199,11 +216,13 @@ pre {
     overflow: visible;
     padding: 0;
     width: 100%;
-    @include media ($tablet) {
+
+    @include media($tablet) {
       display: block;
       margin: 0;
       padding: 0;
     }
+
     &.show {
       display: block;
     }
@@ -213,8 +232,9 @@ pre {
     display: block;
     text-align: right;
     width: 100%;
-    padding: 0.25em 0;
-    @include media ($tablet) {
+    padding: $spacing-xs * 0.5 0;
+
+    @include media($tablet) {
       background: transparent;
       display: inline;
       text-decoration: none;
@@ -227,19 +247,21 @@ pre {
 	    text-decoration: none;
 	    color: $dark-gray;
 	    font-weight: 500;
+	    font-family: $heading-font-family;
 	    transition: color 0.2s ease;
 
 	    &:hover {
 	      color: $action-color;
 	    }
 
-	    @include media ($tablet) {
-	      padding-right: 1.5em;
+	    @include media($tablet) {
+	      padding-right: $spacing-md;
 	    }
 	  }
+
 	  &:last-child a {
-	  	@include media ($tablet) {
-    		padding-right: 1em;
+	  	@include media($tablet) {
+    		padding-right: $spacing-sm;
     	}
     }
   }
@@ -251,25 +273,37 @@ pre {
 .page-content {
 	// Remove this to make header scrollable again
 	margin-top: 66px;
+
 	.wrapper {
 		@include outer-container;
-		padding: 1em;
-		max-width: 740px;
+		max-width: 1200px;
 		margin: 0 auto;
+		padding: 0 $spacing-md;
+
+		@include media($tablet) {
+			padding: 0 $spacing-xl;
+		}
+
+		@include media($desktop) {
+			padding: 0 $spacing-xxl;
+		}
 	}
 	/*
 	*	index.html
 	*/
 	.home-header {
-		padding: 3em 0 2em 0;
 		text-align: center;
 		border-bottom: 1px solid $light-gray;
-		margin-bottom: 2em;
+		padding: $spacing-xl 0;
+
+		@include media($tablet) {
+			padding: $spacing-sm 0 $spacing-xxl 0;
+		}
 
 		.home-title {
 			font-size: 2em;
 			font-weight: 700;
-			margin: 0 0 0.5em 0;
+			margin: 0 0 $spacing-xs 0;
 			color: $dark-gray;
 			letter-spacing: -0.02em;
 		}
@@ -283,20 +317,35 @@ pre {
 	}
 
 	.post-list {
-		padding-top: 1em !important;
 		@extend %default-ul;
 
 		li {
-			margin-bottom: 3em;
-			padding-bottom: 2em;
 			border-bottom: 1px solid $light-gray;
+			padding-bottom: $spacing-lg * 1.25;
+
+			@include media($tablet) {
+				padding-bottom: $spacing-xl;
+			}
 
 			&:last-child {
 				border-bottom: none;
 			}
+
+			&.post-item {
+				cursor: pointer;
+				transition: transform 0.2s ease;
+				margin-bottom: 0;
+				padding-top: $spacing-md;
+				padding-bottom: $spacing-md;
+
+				&:hover {
+					transform: translateY(-4px);
+				}
+			}
 		}
 
 		h2 {
+			margin-top: 0.5rem;
 			margin-bottom: 0.75em;
 			font-size: 1.6em;
 			line-height: 1.4;
@@ -314,12 +363,17 @@ pre {
 		}
 
 		.post-excerpt {
-			margin-bottom: 1em;
+			margin-bottom: $spacing-sm;
 			color: $medium-gray;
 			line-height: 1.7;
 
 			p {
 				margin: 0;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+				overflow: hidden;
+				text-overflow: ellipsis;
 			}
 		}
 
@@ -340,22 +394,19 @@ pre {
 		}
 	}
 	.post-meta {
-		@include outer-container;
-		// padding: 1em 0;
 		color: $medium-gray;
 		font-size: 0.9em;
 		display: flex;
+		justify-content: space-between;
 		align-items: center;
-		gap: 0.5em;
+		gap: $spacing-xs;
 
 		.post-date {
-			@include span-columns(6);
 			text-align: left;
 			font-size: 1em;
 		}
+
 		.post-categories {
-			@include span-columns(6);
-			margin-right: 0;
 			text-align: right;
 			font-size: 1em;
 
@@ -370,21 +421,25 @@ pre {
 			}
 		}
 	}
+
 	.pagination {
-		padding-top: 2em;
+		padding-top: $spacing-lg;
 		text-align: center;
 		color: $medium-gray;
+
 		.page-number {
-			padding: 0 1em;
+			padding: 0 $spacing-sm;
 		}
-    a.newer-posts {
-      text-decoration: none;
-    }
+
+		a.newer-posts {
+			text-decoration: none;
+		}
 	}
+
 	.loading-indicator,
 	.no-more-posts {
 		text-align: center;
-		padding: 2em 0 3em 0;
+		padding: $spacing-lg 0 $spacing-xl 0;
 		color: $medium-gray;
 		font-size: 0.95em;
 
@@ -397,7 +452,7 @@ pre {
 		p {
 			position: relative;
 			display: inline-block;
-			padding-left: 1.5em;
+			padding-left: $spacing-md;
 
 			&:before {
 				content: '';
@@ -450,33 +505,57 @@ pre {
 	*/
 	.post {
 		ul {
-			margin-bottom: 1em;
+			margin-bottom: $spacing-sm;
 		}
+
 		.post-header-container {
 			.scrim {
-				padding: 2em 1em 1em 1em;
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: $spacing-xxl * 1.25 $spacing-md $spacing-sm;
+
+				@include media($tablet) {
+					padding: $spacing-xxl * 1.25 $spacing-xl $spacing-sm;
+				}
+
+				@include media($desktop) {
+					padding: $spacing-xxl * 1.25 $spacing-xxl $spacing-sm;
+				}
+			}
+
+			.post-meta {
+				max-width: 1200px;
+				margin: 0 auto;
+				color: $dark-gray;
+				padding: $spacing-sm $spacing-md $spacing-lg;
+
+				@include media($tablet) {
+					padding: $spacing-sm $spacing-xl $spacing-lg;
+				}
+
+				@include media($desktop) {
+					padding: $spacing-sm $spacing-xxl $spacing-lg;
+				}
 			}
 		}
-		.post-meta {
-			padding-bottom: 1em;
-		}
+
 		.post-content {
-			padding: 2em 0;
+			padding: $spacing-lg 0;
 			font-size: 1.05em;
 
 			// Better paragraph spacing
 			> p {
-				margin-bottom: 1.5em;
+				margin-bottom: $spacing-md;
 			}
 
 			// Better list spacing
 			ul, ol {
-				margin-bottom: 1.5em;
-				padding-left: 1.5em;
+				margin-bottom: $spacing-md;
+				padding-left: $spacing-md;
 
 				li {
-					margin-bottom: 0.5em;
-					line-height: 1.75;
+					margin-bottom: $spacing-xs;
+					line-height: $spacing-md;
 				}
 			}
 		}
@@ -484,46 +563,54 @@ pre {
 			font-size: 0.9em;
 		}
 		.rss {
-			margin: 1em 0 0 0;
+			margin: $spacing-sm 0 0 0;
 			@include span-columns(12);
-			@include media ($tablet) {
-				margin: 1em 0;
+
+			@include media($tablet) {
+				margin: $spacing-sm 0;
 				@include span-columns(6);
 			}
 		}
+
 		.share {
 			font-weight: bold;
-			margin: 0 0 1em 0;
+			margin: 0 0 $spacing-sm 0;
 			@include span-columns(12);
-			@include media ($tablet) {
+
+			@include media($tablet) {
 				@include span-columns(6);
-				margin: 1em 0;
+				margin: $spacing-sm 0;
 				text-align: right;
 			}
+
 			a {
 				width: 1em;
-				padding: 0 0.25em;
+				padding: 0 $spacing-xs * 0.5;
 				text-decoration: none;
 			}
 		}
+
 		.disqus {
 			@include span-columns(12);
 		}
+
 		.post-navigation {
 			font-size: 0.9em;
 			display: block;
 			width: auto;
+
 			.prev-post {
 				display: block;
 				width: 50%;
 				float: left;
-				margin: 1em 0;
+				margin: $spacing-sm 0;
 			}
+
 			.next-post {
 				display: block;
 				width: 50%;
 				float: left;
-				margin: 1em 0;
+				margin: $spacing-sm 0;
 				text-align: right;
 			}
 		}
@@ -533,52 +620,58 @@ pre {
 	*/
 	.page {
 		.post-header {
-			padding: 0.5em 1em 1em 1em;
+			padding: $spacing-xs $spacing-sm $spacing-sm $spacing-sm;
 			text-align: center;
 		}
+
 		.posts-list {
 			@extend %default-ul;
+
 			li {
 				padding: modular-scale(-4);
 				padding-left: 0;
 			}
+
 			.desc {
 				font-size: 0.9em;
 			}
+
 			.post-date {
 				color: $medium-gray;
 			}
 		}
+
 		.profile {
 			max-width: 320px;
 			width: 100%;
 			height: auto;
 			margin: auto;
-			padding-bottom: 0.5em;
+			padding-bottom: $spacing-xs;
 			display: block;
  		}
+
 		.contact-links {
-			margin-top: 2.5em;
-			margin-bottom: 3em;
-			padding-top: 2em;
-			padding-bottom: 2em;
+			margin-top: $spacing-lg * 1.25;
+			margin-bottom: $spacing-xl;
+			padding-top: $spacing-lg;
+			padding-bottom: $spacing-lg;
 			border-top: 1px solid $light-gray;
 			display: flex;
 			flex-direction: column;
-			gap: 1em;
+			gap: $spacing-sm;
 			align-items: flex-start;
 
-			@include media ($tablet) {
+			@include media($tablet) {
 				flex-direction: row;
 				justify-content: center;
-				gap: 2.5em;
-				margin-bottom: 4em;
+				gap: $spacing-lg * 1.25;
+				margin-bottom: $spacing-xxl;
 			}
 
 			.contact-link {
 				display: flex;
 				align-items: center;
-				gap: 0.5em;
+				gap: $spacing-xs;
 				text-decoration: none;
 				color: $dark-gray;
 				font-size: 0.95em;
@@ -610,10 +703,19 @@ pre {
 */
 .site-footer {
 	$link-color: $dark-gray;
-	padding: 2em 1em 3em 1em;
 	background-color: $off-white;
 	color: $dark-gray;
 	border-top: 1px solid $light-gray;
+	padding: $spacing-lg $spacing-md $spacing-xl $spacing-md;
+
+	@include media($tablet) {
+		padding: $spacing-lg * 1.25 $spacing-lg $spacing-xl * 1.75 $spacing-lg;
+	}
+
+	@include media($desktop) {
+		padding: $spacing-xl $spacing-lg $spacing-xxl $spacing-lg;
+	}
+
 	a {
 	  color: $link-color;
 	  &:active,
@@ -628,9 +730,8 @@ pre {
 	}
 	.wrapper {
 		@include outer-container;
-	}
-	.footer-heading {
-
+		max-width: 1200px;
+		margin: 0 auto;
 	}
 	/*
 	*	Site Navigation (left)
@@ -652,38 +753,44 @@ pre {
 	*	Contact Info (center)
 	*/
 	.site-contact {
-		margin-top: 1em;
 		@include span-columns(12);
-		@include media ($mobile) {
-			@include span-columns(6);
-			margin-top: 0;
-			margin-right: 0;
-		}
-		@include media ($tablet) {
-			@include span-columns(4);
-			margin-top: 0;
-		}
 		font-size: 0.9em;
+		margin-top: $spacing-sm;
+
+		@include media($mobile) {
+			@include span-columns(6);
+			margin-right: 0;
+			margin-top: 0;
+		}
+
+		@include media($tablet) {
+			@include span-columns(4);
+		}
+
 		i {
 			width: 1.25em;
 			text-align: center;
 		}
+
 		ul {
 			@extend %default-ul;
 		}
 	}
+
 	/*
 	*	Site Description/Signature (right)
 	*/
 	.site-signature {
-		margin-top: 1em;
 		@include span-columns(12);
-		@include media ($tablet) {
+		font-size: 0.9em;
+		margin-top: $spacing-sm;
+
+		@include media($tablet) {
 			@include span-columns(4);
 			margin-right: 0;
 			margin-top: 0;
 		}
-		font-size: 0.9em;
+
 		a {
 			text-decoration: underline;
 		}

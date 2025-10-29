@@ -1,13 +1,8 @@
-ul,
-ol {
-
-  &%default-ul,
-  &%default-ol {
-  	list-style-type: none;
-	  margin: 0;
-	  padding: 0;
-  }
-  
+%default-ul,
+%default-ol {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 }
 
 ul {

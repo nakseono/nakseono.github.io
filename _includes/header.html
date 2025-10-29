@@ -1,11 +1,7 @@
 <header class="navigation" role="banner">
   <div class="navigation-wrapper">
     <a href="{{ site.baseurl }}/" class="logo" aria-label="Home - {{ site.title }}">
-      {% if site.logo %}
-      <img src="{{ site.logo | prepend: site.baseurl }}" alt="{{ site.title }} logo">
-      {% else %}
-      <span>{{ site.title }}</span>
-      {% endif %}
+      <span>Home</span>
     </a>
     <button type="button" class="navigation-menu-button" id="js-mobile-menu" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="js-navigation-menu">
       <i class="fa fa-bars" aria-hidden="true"></i>

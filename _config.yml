@@ -22,7 +22,6 @@ description: "개발자 김선호의 개인 블로그. 학습한 내용과 일�
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://nakseono.github.io" # the base hostname & protocol for your site
 cover: "/assets/header_image.jpeg"
-logo: "/assets/logo.png"
 timezone: Asia/Seoul
 lang: ko
 
@@ -118,12 +117,12 @@ social:
 # These are for automatically generating sharing metadata for FB and Twitter
 # OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
 protocols:
-    fb_image: "/assets/logo.png"
-    fb_image_width: 612
-    fb_image_height: 605
-    fb_image_type: "image/png"
+    fb_image: "/assets/header_image.jpeg"
+    fb_image_width: 1200
+    fb_image_height: 630
+    fb_image_type: "image/jpeg"
 
-    twitter_image: "/assets/logo.png"
+    twitter_image: "/assets/header_image.jpeg"
 
     os_repo: "https://github.com/bencentra/centrarium.com"
     os_rcs_type: "git"

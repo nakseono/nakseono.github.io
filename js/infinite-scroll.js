@@ -26,11 +26,11 @@
   // Create post HTML
   function createPostHTML(post) {
     const categoriesHTML = post.categories.length > 0
-      ? `in ${post.categories.map(cat => `<a href="/posts/#${cat.toLowerCase()}">${cat}</a>`).join(', ')}`
+      ? `in ${post.categories.map(cat => `<a href="/posts/#${cat.toLowerCase()}" onclick="event.stopPropagation()">${cat}</a>`).join(', ')}`
       : '';
 
     return `
-      <li>
+      <li class="post-item" onclick="location.href='${post.url}'">
         <h2>
           <a class="post-link" href="${post.url}">${post.title}</a>
         </h2>
