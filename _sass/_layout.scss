@@ -56,18 +56,7 @@ pre {
 	$divider-color: $light-gray;
   display: block;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 $spacing-md;
-  box-sizing: border-box;
-
-  @include media($tablet) {
-    padding: 0 $spacing-xl;
-  }
-
-  @include media($desktop) {
-    padding: 0 $spacing-xxl;
-  }
 
   // border를 내부 요소로 이동
   &::before {
@@ -620,8 +609,12 @@ pre {
 	*/
 	.page {
 		.post-header {
-			padding: $spacing-xs $spacing-sm $spacing-sm $spacing-sm;
+			padding: $spacing-xl 0;
 			text-align: center;
+
+			@include media($tablet) {
+				padding: $spacing-xxl 0;
+			}
 		}
 
 		.posts-list {
