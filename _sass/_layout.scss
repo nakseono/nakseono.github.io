@@ -297,7 +297,7 @@ pre {
 		padding: $spacing-xl 0;
 
 		@include media($tablet) {
-			padding: $spacing-sm 0 $spacing-xxl 0;
+			padding: $spacing-xxl 0;
 		}
 
 		.home-title {
