@@ -1,9 +1,9 @@
 // Google Fonts - Medium/Notion style
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Serif+KR:wght@400;500;600;700&display=swap');
 
-// Typography - Medium/Notion inspired
-$base-font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-$heading-font-family: "Noto Serif KR", "Noto Sans KR", Georgia, "Times New Roman", serif;
+// Typography - Serif-based for readability
+$base-font-family: "Noto Serif KR", Georgia, "Times New Roman", serif;
+$heading-font-family: "Noto Serif KR", Georgia, "Times New Roman", serif;
 
 // Font Sizes - Medium style
 $em-base: 14px !default; // Reduced from 16px
