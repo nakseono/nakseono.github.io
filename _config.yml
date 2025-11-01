@@ -37,6 +37,7 @@ lang: ko
 # Build settings
 future: true
 markdown: kramdown
+encoding: utf-8
 kramdown:
   input: GFM
   syntax_highlighter_opts:
