@@ -1,0 +1,11 @@
+{
+  "file-explorer:new-file": [],
+  "templater-obsidian:create-_templates/new-post.md": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "N"
+    }
+  ]
+}

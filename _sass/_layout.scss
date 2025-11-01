@@ -18,12 +18,12 @@ ul.default {
 }
 
 code {
-	background-color: $off-white;
+	background-color: #F6F8FA;
 	display: inline-block;
 	border-radius: $base-border-radius;
 	padding: 2px $spacing-xs * 0.75;
 	font-size: 0.92em;
-	border: 1px solid $light-gray;
+	border: 1px solid #D0D7DE;
 	font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
 }
 
@@ -40,9 +40,10 @@ blockquote {
 pre code.hljs {
 	font-size: modular-scale(-1);
 	border: none;
-	background-color: $off-white;
+	background-color: #0d1117;
+	color: #c9d1d9;
 	padding: $spacing-md;
-	border-radius: $base-border-radius;
+	border-radius: 6px;
 	line-height: 1.6;
 	font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
 }
@@ -89,10 +90,6 @@ pre {
     margin-right: auto;
     border-radius: 50%;
   }
-}
-
-.tooltip {
-	border-bottom: 1px dotted $medium-gray;
 }
 
 
@@ -412,62 +409,65 @@ pre {
 	}
 
 	.pagination {
-		padding-top: $spacing-lg;
-		text-align: center;
-		color: $medium-gray;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: $spacing-xs;
+		padding: $spacing-xl 0;
+		margin-top: $spacing-lg;
 
-		.page-number {
-			padding: 0 $spacing-sm;
-		}
-
-		a.newer-posts {
+		.pagination-link {
+			padding: $spacing-xs $spacing-sm;
+			color: $dark-gray;
 			text-decoration: none;
-		}
-	}
+			border: 1px solid $light-gray;
+			border-radius: $base-border-radius;
+			transition: all 0.2s ease;
+			font-size: 0.95em;
 
-	.loading-indicator,
-	.no-more-posts {
-		text-align: center;
-		padding: $spacing-lg 0 $spacing-xl 0;
-		color: $medium-gray;
-		font-size: 0.95em;
+			&:hover:not(.disabled) {
+				background-color: $action-color;
+				color: $white;
+				border-color: $action-color;
+			}
 
-		p {
-			margin: 0;
-		}
-	}
-
-	.loading-indicator {
-		p {
-			position: relative;
-			display: inline-block;
-			padding-left: $spacing-md;
-
-			&:before {
-				content: '';
-				position: absolute;
-				left: 0;
-				top: 50%;
-				transform: translateY(-50%);
-				width: 1em;
-				height: 1em;
-				border: 2px solid $light-gray;
-				border-top-color: $action-color;
-				border-radius: 50%;
-				animation: spin 0.8s linear infinite;
+			&.disabled {
+				color: $light-gray;
+				cursor: not-allowed;
+				border-color: $light-gray;
 			}
 		}
-	}
 
-	@keyframes spin {
-		to {
-			transform: translateY(-50%) rotate(360deg);
+		.pagination-numbers {
+			display: flex;
+			gap: $spacing-xs * 0.5;
+			margin: 0 $spacing-sm;
 		}
-	}
 
-	.no-more-posts {
-		p {
-			font-style: italic;
+		.pagination-number {
+			display: inline-block;
+			min-width: 2.5em;
+			padding: $spacing-xs $spacing-sm;
+			color: $dark-gray;
+			text-decoration: none;
+			border: 1px solid $light-gray;
+			border-radius: $base-border-radius;
+			text-align: center;
+			transition: all 0.2s ease;
+			font-size: 0.95em;
+
+			&:hover {
+				background-color: $action-color;
+				color: $white;
+				border-color: $action-color;
+			}
+
+			&.active {
+				background-color: $action-color;
+				color: $white;
+				border-color: $action-color;
+				font-weight: 600;
+			}
 		}
 	}
 	.site-header-container {
@@ -484,10 +484,61 @@ pre {
 			}
 		}
 	}
+	// 이미지 및 GIF 스타일
 	img {
 		display: block;
-		margin: auto;
-		width: 90%;
+		margin: $spacing-sm auto;
+		max-width: 100%;
+		height: auto;
+		border-radius: $base-border-radius;
+	}
+
+	// 포스트 본문 내 이미지는 적당한 크기로 제한
+	.post-content {
+		img {
+			max-width: 700px;
+			width: 100%;
+		}
+
+		// 이미지 바로 다음에 오는 이탤릭체를 캡션으로 스타일링
+		img + em {
+			display: block;
+			text-align: center;
+			font-size: 0.9em;
+			color: $medium-gray;
+			margin-top: $spacing-xs * 0.5;
+			margin-bottom: $spacing-md;
+			font-style: italic;
+		}
+
+		// 단락 안의 이미지 다음 이탤릭체도 동일하게 처리
+		p > img + em {
+			display: block;
+			text-align: center;
+			font-size: 0.9em;
+			color: $medium-gray;
+			margin-top: $spacing-xs * 0.5;
+			margin-bottom: $spacing-md;
+		}
+	}
+
+	// Figure와 캡션 스타일
+	figure {
+		margin: $spacing-lg auto;
+		max-width: 700px;
+		text-align: center;
+
+		img {
+			margin: 0 auto;
+		}
+
+		figcaption {
+			margin-top: $spacing-xs * 0.5;
+			font-size: 0.9em;
+			color: $medium-gray;
+			font-style: italic;
+			line-height: 1.5;
+		}
 	}
 	/*
 	*	Posts

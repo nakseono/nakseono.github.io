@@ -1,40 +1,26 @@
 <!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js" integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha256-whL0tQWoY1Ku1iskqPFvmZ+CHsvmRWx/PIoEvIeWh4I=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js" integrity="sha256-HZYvSQO1rL1MOJnGq1p4ByJdZvOvD4J4WZdzGxcBPVc=" crossorigin="anonymous"></script>
 
 <script type="text/javascript">
-$(document).ready(function() {
-  // Default syntax highlighting
+document.addEventListener('DOMContentLoaded', function() {
+  // Syntax highlighting
   hljs.highlightAll();
 
-  // Header
-  var menuToggle = $('#js-mobile-menu').unbind();
-  $('#js-navigation-menu').removeClass("show");
-  menuToggle.on('click', function(e) {
-    e.preventDefault();
-    var menu = $('#js-navigation-menu');
-    var isExpanded = $(this).attr('aria-expanded') === 'true';
-    $(this).attr('aria-expanded', !isExpanded);
-    menu.slideToggle(function(){
-      if(menu.is(':hidden')) {
-        menu.removeAttr('style');
-      }
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('js-mobile-menu');
+  const menu = document.getElementById('js-navigation-menu');
+
+  if (menuToggle && menu) {
+    menu.classList.remove('show');
+
+    menuToggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      const isExpanded = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isExpanded);
+      menu.classList.toggle('show');
     });
-  });
-
-	// Enable tooltips via Tippy.js
-	if (Array.isArray(window.tooltips)) {
-		window.tooltips.forEach(function(tooltip) {
-			var selector = tooltip[0];
-			var config = tooltip[1];
-			tippy(selector, config);
-		})
-	}
+  }
 });
-
 </script>
 
 {% if page.custom_js %}

@@ -2,13 +2,23 @@
 # See http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html for making `jekyll archives` work.
 plugins:
   - jekyll-feed
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-seo-tag
   - jekyll-archives
 
 exclude:
   - "/vendor/"
+  - ".obsidian/"
+  - "_templates/"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "docker-compose.yml"
+  - "Dockerfile"
+  - ".git/"
+  - ".gitignore"
+  - "README.md"
+  - "*.bak"
+  - "_posts_backup/"
 
 # Site settings
 title: 끄적끄적 낙서 공간
@@ -21,11 +31,11 @@ description: "개발자 김선호의 개인 블로그. 학습한 내용과 일�
 # root of your server.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://nakseono.github.io" # the base hostname & protocol for your site
-cover: "/assets/header_image.jpeg"
 timezone: Asia/Seoul
 lang: ko
 
 # Build settings
+future: true
 markdown: kramdown
 kramdown:
   input: GFM
@@ -40,12 +50,18 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-permalink: /:year/:month/:day/:title/
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: /:year/:month/:day/:title/
+
 inter_post_navigation: false
 highlightjs_theme: "monokai-sublime"
 
 # Performance optimization
-incremental: true
+incremental: false
 liquid:
   error_mode: strict
   strict_filters: true
@@ -59,12 +75,7 @@ sass:
     - import
 
 # Pagination Settings
-# https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-GENERATOR.md#site-configuration
-pagination:
-  enabled: true
-  per_page: 5
-  permalink: "/page/:num/"
-  sort_reverse: true
+per_page: 5
 
 # Archive settings (see https://github.com/jekyll/jekyll-archives/)
 jekyll-archives:
@@ -115,15 +126,7 @@ social:
 
 # Social sharing protocols
 # These are for automatically generating sharing metadata for FB and Twitter
-# OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
 protocols:
-    fb_image: "/assets/header_image.jpeg"
     fb_image_width: 1200
     fb_image_height: 630
     fb_image_type: "image/jpeg"
-
-    twitter_image: "/assets/header_image.jpeg"
-
-    os_repo: "https://github.com/bencentra/centrarium.com"
-    os_rcs_type: "git"
-    os_src: "git@github.com:bencentra/centrarium.com.git"
