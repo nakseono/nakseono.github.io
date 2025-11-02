@@ -11,10 +11,14 @@
             "id": "22d0de9a584038e0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "_posts/dev/2021/2021-12-02-디스코드-봇-개발-회고.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "2021-12-02-디스코드-봇-개발-회고"
             }
           }
         ]
@@ -180,9 +184,9 @@
   },
   "active": "22d0de9a584038e0",
   "lastOpenFiles": [
-    "_posts/dev/2021/2021-12-02-디스코드-봇-개발-회고.md",
     "_posts/dev/2021/2021-11-15-프로젝트를-하며-느낀-trycatch와-logging에-대하여.md",
     "_posts/dev/2021/2021-06-08-js-조금-더-유연한-코드-작성을-위해-spread-operator.md",
+    "_posts/dev/2021/2021-12-02-디스코드-봇-개발-회고.md",
     "_posts/life/2025/2025-01-03-2024-it-산업기능요원-편입-후기.md",
     "_posts/life/2024/2024-12-31-중고신입-개발자의-2024년도-회고.md",
     "_posts/life/2025/2025-10-25-ai와-개발-블로그에-대한-생각.md",
