@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "1cb3fb9d46dbe01b",
+        "id": "d8a354ec7975d35a",
         "type": "tabs",
         "children": [
           {
-            "id": "f6304a787669dafa",
+            "id": "22d0de9a584038e0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_posts/2025-11-01-2024-it-산업기능요원-편입-후기.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2025-11-01-2024-it-산업기능요원-편입-후기"
+              "title": "New tab"
             }
           }
         ]
@@ -84,12 +80,11 @@
               "title": "Source Control"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 392.5
+    "width": 302.5
   },
   "right": {
     "id": "93966951abec8ee5",
@@ -183,32 +178,39 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "5e3e34180aeccff1",
+  "active": "22d0de9a584038e0",
   "lastOpenFiles": [
-    "assets/icons/apple-icon-precomposed.png",
-    "assets/icons/android-icon-36x36.png",
-    "assets/icons/android-icon-96x96.png",
-    "assets/icons/android-icon-144x144.png",
-    "assets/icons/apple-icon-152x152.png",
-    "assets/icons/apple-icon-180x180.png",
-    "assets/icons/ms-icon-310x310.png",
-    "_site/2025/01/03/2024-it-산업기능요원-편입-후기/index.html",
-    "assets/icons/ms-icon-150x150.png",
-    "assets/icons/ms-icon-144x144.png",
-    "assets/icons/ms-icon-70x70.png",
-    "assets/icons/favicon-96x96.png",
-    "_posts/2025-11-01-2024-it-산업기능요원-편입-후기.md",
-    "_site/2025/01/03/2024-it-산업기능요원-편입-후기/2025-11-01-2024-it-산업기능요원-편입-후기.html",
-    "_site/2025/01/03/2024-it-산업기능요원-편입-후기/2025-11-01-2024-it-산업기능요원-편입-후기.html",
-    "_site/2025/01/03/2024-it-산업기능요원-편입-후기/2025-11-01-2024-it-산업기능요원-편입-후기.html",
-    "_site/2025/01/03/2024-it-산업기능요원-편입-후기/2025-11-01-2024-it-산업기능요원-편입-후기.html",
-    "_site/2025/01/03/2024-it-산업기능요원-편입-후기/2025-11-01-2024-it-산업기능요원-편입-후기.html",
-    "_site/2025/01/03/2024-it-산업기능요원-편입-후기/2025-11-01-2024-it-산업기능요원-편입-후기.html",
-    "_site/2025/01/03/2024-it-산업기능요원-편입-후기/2025-11-01-2024-it-산업기능요원-편입-후기.html",
-    "_site/2025/01/03/2024-it-산업기능요원-편입-후기/2025-11-01-2024-it-산업기능요원-편입-후기.html",
-    "_site/2025/01/03/2024-it-산업기능요원-편입-후기/2025-11-01-2024-it-산업기능요원-편입-후기.html",
-    "_posts/2025-10-25-ai와-개발-블로그에-대한-생각.md",
+    "_posts/dev/2021/2021-12-02-디스코드-봇-개발-회고.md",
+    "_posts/dev/2021/2021-11-15-프로젝트를-하며-느낀-trycatch와-logging에-대하여.md",
+    "_posts/dev/2021/2021-06-08-js-조금-더-유연한-코드-작성을-위해-spread-operator.md",
+    "_posts/life/2025/2025-01-03-2024-it-산업기능요원-편입-후기.md",
+    "_posts/life/2024/2024-12-31-중고신입-개발자의-2024년도-회고.md",
+    "_posts/life/2025/2025-10-25-ai와-개발-블로그에-대한-생각.md",
+    "_site/2021/12/02/디스코드-봇-개발-회고/index.html",
+    "_site/2021/11/15/프로젝트를-하며-느낀-trycatch와-logging에-대하여/index.html",
+    "_site/2021/12/02/디스코드-봇-개발-회고/2025-11-02-디스코드-봇-개발-회고.html",
+    "_site/2021/12/02/디스코드-봇-개발-회고",
+    "_site/2021/12/02",
+    "_site/2021/12",
+    "_site/2021/11/15/프로젝트를-하며-느낀-trycatch와-logging에-대하여/2025-11-02-디스코드-봇-개발-회고.html",
+    "_site/2025/11/02/디스코드-봇-개발-회고/2025-11-02-디스코드-봇-개발-회고.html",
+    "_site/2021/11/15/프로젝트를-하며-느낀-trycatch와-logging에-대하여/2025-11-02-디스코드-봇-개발-회고.html",
+    "_site/2025/11/02/디스코드-봇-개발-회고/2025-11-02-디스코드-봇-개발-회고.html",
+    "_site/assets/2025-11-02-디스코드-봇-개발-회고.png",
+    "_site/assets/2025-11-02-디스코드-봇-개발-회고-1.png",
+    "assets/2025-11-02-디스코드-봇-개발-회고.png",
+    "_site/assets/2021-11-15-프로젝트를-하며-느낀-trycatch와-logging에-대하여-6.png",
+    "_site/assets/2021-11-15-프로젝트를-하며-느낀-trycatch와-logging에-대하여-7.png",
+    "assets/2021-11-15-프로젝트를-하며-느낀-trycatch와-logging에-대하여-6.png",
+    "_site/assets/2021-11-15-프로젝트를-하며-느낀-trycatch와-logging에-대하여-5.png",
+    "assets/2021-11-15-프로젝트를-하며-느낀-trycatch와-logging에-대하여-5.png",
+    "_site/assets/2021-11-15-프로젝트를-하며-느낀-trycatch와-logging에-대하여-4.png",
+    "assets/2021-11-15-프로젝트를-하며-느낀-trycatch와-logging에-대하여-4.png",
+    "_posts/2025-11-02-테스트포스트.md",
+    "_posts/2021-06-08-js-조금-더-유연한-코드-작성을-위해-spread-operator.md",
+    "_posts/2025-01-03-2024-it-산업기능요원-편입-후기.md",
     "_posts/2024-12-31-중고신입-개발자의-2024년도-회고.md",
+    "_posts/2025-10-25-ai와-개발-블로그에-대한-생각.md",
     "index.md",
     "posts.md",
     "_posts/2025-11-01-테스트5.md",
@@ -222,13 +224,6 @@
     "_site/LICENSE.md",
     "_posts/2025-11-01-테스트8.md",
     "_posts_backup/2025-11-01-테스트8.md",
-    "_posts_backup/2025-11-01-테스트7.md",
-    "_posts_backup/2025-11-01-테스트6.md",
-    "_posts_backup/2025-11-01-테스트5.md",
-    "_posts/2025-11-01-untitled.md",
-    "_posts/2025-11-01-테스트7.md",
-    "_posts/2025-11-01-테스트6.md",
-    "_posts/2025-11-01-테스트게시글.md",
-    "_templates/new-post.md"
+    "_posts_backup/2025-11-01-테스트7.md"
   ]
 }

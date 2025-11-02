@@ -13,6 +13,8 @@ services:
     environment:
       - JEKYLL_ENV=development
       - BUNDLE_PATH=/usr/local/bundle
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
     restart: unless-stopped
 
 volumes:
