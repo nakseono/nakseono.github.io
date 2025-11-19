@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "d8a354ec7975d35a",
+        "id": "e0cc33fb149cd9be",
         "type": "tabs",
         "children": [
           {
-            "id": "22d0de9a584038e0",
+            "id": "6917b20e54f5dc79",
             "type": "leaf",
             "state": {
-              "type": "split-diff-view",
+              "type": "markdown",
               "state": {
-                "aFile": "_posts/dev/2021/2021-12-02-디스코드-봇-개발-회고.md",
-                "bFile": "_posts/dev/2021/2021-12-02-디스코드-봇-개발-회고.md",
-                "aRef": ""
+                "file": "_posts/dev/2025/2025-11-19-linux-디스크-마운트-개념.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "diff",
-              "title": "Diff: 2021-12-02-디스코드-봇-개발-회고"
+              "icon": "lucide-file",
+              "title": "2025-11-19-linux-디스크-마운트-개념"
             }
           }
         ]
@@ -89,7 +89,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 302.5
+    "width": 376.5
   },
   "right": {
     "id": "93966951abec8ee5",
@@ -153,13 +153,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-12-31-중고신입-개발자의-2024년도-회고.md",
+                "file": "_posts/dev/2025/2025-11-19-linux-디스크-마운트-개념.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2024-12-31-중고신입-개발자의-2024년도-회고"
+              "title": "Outline of 2025-11-19-linux-디스크-마운트-개념"
             }
           }
         ],
@@ -167,8 +167,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,24 +182,29 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "22d0de9a584038e0",
+  "active": "5e3e34180aeccff1",
   "lastOpenFiles": [
+    "_site/2025/11/19/linux-디스크-마운트-개념/2025-11-19-linux-디스크-마운트-개념.html",
+    "_site/css/2025-11-19-linux-디스크-마운트-개념.map",
+    "_site/category/server/2025-11-19-linux-디스크-마운트-개념.html",
+    "_site/2025/11/19/linux-디스크-마운트-개념/2025-11-19-linux-디스크-마운트-개념.html",
+    "_site/js/2025-11-19-linux-디스크-마운트-개념-2.js",
+    "_site/css/2025-11-19-linux-디스크-마운트-개념.map",
+    "_site/category/server/2025-11-19-linux-디스크-마운트-개념.html",
+    "_site/2025/11/19/linux-디스크-마운트-개념/2025-11-19-linux-디스크-마운트-개념.html",
+    "_site/js/2025-11-19-linux-디스크-마운트-개념-3.js",
+    "_site/css/2025-11-19-linux-디스크-마운트-개념.map",
+    "_site/category/server/2025-11-19-linux-디스크-마운트-개념.html",
+    "_posts/dev/2025/2025-11-19-linuxproxmox-디스크-개념.md",
+    "_posts/dev/2025/2025-11-19-linux-디스크-마운트-개념.md",
+    "_posts/dev/2025/2025-11-19-미니pc와-proxmox로-홈서버-구축하기.md",
+    "_posts/dev/2025/2025-11-16-proxmox로-홈서버-구축하기.md",
     "_posts/dev/2021/2021-12-02-디스코드-봇-개발-회고.md",
     "_posts/dev/2021/2021-11-15-프로젝트를-하며-느낀-trycatch와-logging에-대하여.md",
     "_posts/dev/2021/2021-06-08-js-조금-더-유연한-코드-작성을-위해-spread-operator.md",
     "_posts/life/2025/2025-01-03-2024-it-산업기능요원-편입-후기.md",
     "_posts/life/2024/2024-12-31-중고신입-개발자의-2024년도-회고.md",
     "_posts/life/2025/2025-10-25-ai와-개발-블로그에-대한-생각.md",
-    "_site/2021/12/02/디스코드-봇-개발-회고/index.html",
-    "_site/2021/11/15/프로젝트를-하며-느낀-trycatch와-logging에-대하여/index.html",
-    "_site/2021/12/02/디스코드-봇-개발-회고/2025-11-02-디스코드-봇-개발-회고.html",
-    "_site/2021/12/02/디스코드-봇-개발-회고",
-    "_site/2021/12/02",
-    "_site/2021/12",
-    "_site/2021/11/15/프로젝트를-하며-느낀-trycatch와-logging에-대하여/2025-11-02-디스코드-봇-개발-회고.html",
-    "_site/2025/11/02/디스코드-봇-개발-회고/2025-11-02-디스코드-봇-개발-회고.html",
-    "_site/2021/11/15/프로젝트를-하며-느낀-trycatch와-logging에-대하여/2025-11-02-디스코드-봇-개발-회고.html",
-    "_site/2025/11/02/디스코드-봇-개발-회고/2025-11-02-디스코드-봇-개발-회고.html",
     "_site/assets/2025-11-02-디스코드-봇-개발-회고.png",
     "_site/assets/2025-11-02-디스코드-봇-개발-회고-1.png",
     "assets/2025-11-02-디스코드-봇-개발-회고.png",
@@ -225,10 +229,6 @@
     "_posts/2025-11-01-테스트4.md",
     "_posts/2025-11-01-테스트.md",
     "_posts_backup/2025-11-01-테스트4.md",
-    "_site/2025/11/01/untitled.md",
-    "_site/LICENSE.md",
-    "_posts/2025-11-01-테스트8.md",
-    "_posts_backup/2025-11-01-테스트8.md",
-    "_posts_backup/2025-11-01-테스트7.md"
+    "_site/2025/11/01/untitled.md"
   ]
 }

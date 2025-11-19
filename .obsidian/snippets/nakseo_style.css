@@ -1,0 +1,46 @@
+/* ===================================
+   Heading Customization
+   =================================== */
+
+/* File Title (inline-title) */
+.inline-title {
+  font-size: 32px !important;
+}
+
+/* Heading Font Sizes */
+.cm-header.cm-header-1 {
+  font-size: 28px !important;
+}
+
+.cm-header.cm-header-2 {
+  font-size: 24px !important;
+}
+
+.cm-header.cm-header-3 {
+  font-size: 20px !important;
+}
+
+.cm-header.cm-header-4 {
+  font-size: 18px !important;
+}
+
+.cm-header.cm-header-5 {
+  font-size: 16px !important;
+}
+
+.cm-header.cm-header-6 {
+  font-size: 14px !important;
+}
+
+
+/* ===================================
+   Inline Code Customization
+   =================================== */
+
+/* Inline Code Color - Red Accent */
+.markdown-preview-view code:not(.cm-code),
+.markdown-rendered code:not(.cm-code),
+.markdown-source-view.mod-cm6 .cm-inline-code {
+  color: #e83e8c !important;
+  background-color: var(--code-background) !important;
+}

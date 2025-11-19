@@ -4,5 +4,6 @@
   "newFileFolderPath": "_posts",
   "attachmentFolderPath": "assets",
   "promptDelete": false,
-  "useMarkdownLinks": true
+  "useMarkdownLinks": true,
+  "spellcheck": false
 }

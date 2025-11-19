@@ -2,6 +2,7 @@
   "cssTheme": "Minimal",
   "baseFontSize": 13,
   "enabledCssSnippets": [
-    "headerStyle"
+    "headerStyle",
+    "nakseo_style"
   ]
 }

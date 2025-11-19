@@ -1,0 +1,110 @@
+// Table of Contents (TOC) Styles
+.post-toc {
+  display: none; // Hidden by default on mobile/tablet
+
+  @media (min-width: 1200px) {
+    display: block;
+    position: sticky;
+    top: 100px; // Fixed header height + spacing
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding-left: $spacing-lg;
+
+    // Custom scrollbar for better aesthetics
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $light-gray;
+      border-radius: 2px;
+
+      &:hover {
+        background: $medium-gray;
+      }
+    }
+  }
+}
+
+.toc-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $dark-gray;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: $spacing-sm;
+  font-family: $heading-font-family;
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.toc-item {
+  margin: 0;
+  padding: 0;
+
+  // Indentation for nested headings
+  &.toc-h2 {
+    padding-left: 0;
+  }
+
+  &.toc-h3 {
+    padding-left: $spacing-sm;
+  }
+
+  &.toc-h4 {
+    padding-left: $spacing-md;
+  }
+
+  &.toc-h5 {
+    padding-left: $spacing-lg;
+  }
+
+  &.toc-h6 {
+    padding-left: $spacing-xl;
+  }
+}
+
+.toc-link {
+  display: block;
+  padding: $spacing-xs 0;
+  color: $medium-gray;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  padding-left: $spacing-sm;
+  margin-left: -$spacing-sm;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: $accent-green;
+    border-left-color: $light-gray;
+  }
+
+  // Active state - current section being viewed
+  &.active {
+    color: $accent-green;
+    font-weight: 500;
+    border-left-color: $accent-green;
+  }
+}
+
+// Smooth scroll behavior
+html {
+  scroll-behavior: smooth;
+}
+
+// Add offset for fixed header when jumping to sections
+.post-content {
+  h2, h3, h4, h5, h6 {
+    scroll-margin-top: 80px; // Account for fixed header
+  }
+}
